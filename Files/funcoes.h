@@ -21,7 +21,7 @@
  * @param max 
  * @return int 
  */
-int carregar_perguntas(const char arquivo, Perguntas perguntas[], int max);
+int carregar_perguntas(const char arquivo, Perguntas perguntas[], int max); //preferencia por tipo de variavel const pra evitar comportamentos indefinidos ( lembrar de usar para o resto das funções com parâmetros imutáveis) 
 
 /**
  * @brief exibe as perguntas.
