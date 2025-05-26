@@ -1,2 +1,1 @@
-
-`AtualizarDoxygen.bat` para atualizar a documentação do  Doxygen. <<Lembrar Disso<<
+Documentação sobre o código na pasta DocsDoxygen. É atualizado pelo .bat conforme o andamento do projeto.
