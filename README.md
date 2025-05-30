@@ -14,4 +14,4 @@ Documentação sobre o código na pasta DocsDoxygen. É atualizado pelo .bat con
   menu.h
 
 perguntas.csv 
-Makefile.exe
+Makefile , depois compilar pelo vs pra fazer um .exe
