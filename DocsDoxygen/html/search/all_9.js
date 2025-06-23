@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['verificar_5fresposta_0',['verificar_resposta',['../funcoes_8h.html#acc13a84201c0676110e3f196b5121748',1,'verificar_resposta(const Perguntas *p, char resposta_usuario):&#160;funcoes.h'],['../funcoes__def_8c.html#ae8fc84857bfd197da569c70f71f2aaf7',1,'verificar_resposta(const Pergunta *p, char resposta_usuario):&#160;funcoes_def.c']]]
+  ['tamanho_5fenunciado_0',['TAMANHO_ENUNCIADO',['../perguntas_8h.html#a867dca9f072e7beecec34de8f10d3d61',1,'perguntas.h']]],
+  ['tamanho_5fresposta_1',['TAMANHO_RESPOSTA',['../perguntas_8h.html#a8af0ce371d9707f8fca554a0ef3e2973',1,'perguntas.h']]]
 ];

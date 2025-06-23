@@ -19,16 +19,17 @@
 
 typedef enum{
     MUITO_FACIL=1, FACIL, MEDIO, DIFICIL, MUITO_DIFICIL
-}nivel;
+}Nivel;
 /**
  * @brief struct para perguntas;
  * 
  */
 typedef struct{
     char enunciado[TAMANHO_ENUNCIADO];
-    char alt_a[TAMANHO_RESPOSTA], alt_b[TAMANHO_RESPOSTA], alt_c[TAMANHO_RESPOSTA], alt_d[TAMANHO_RESPOSTA], alt_e[100];
+    char alt_a[TAMANHO_RESPOSTA], alt_b[TAMANHO_RESPOSTA], alt_c[TAMANHO_RESPOSTA], alt_d[TAMANHO_RESPOSTA], alt_e[TAMANHO_RESPOSTA];
     char correta;
-    int nivel;
+    Nivel nivel;
 }Perguntas;
+
 
 #endif // QUIZ_H

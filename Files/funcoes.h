@@ -11,32 +11,21 @@
  * @copyright Copyright (c) 2025
  * 
  */
-#include "perguntas.h" //struct das perguntas. 
+#include "perguntas.h" //struct das perguntas ;
 
-/**
- * @brief carrega perguntas do arquivo .csv
- * 
- * @param arquivo 
- * @param perguntas 
- * @param max 
- * @return int 
- */
-int carregar_perguntas(const char arquivo, Perguntas perguntas[], int max); //preferencia por tipo de variavel const pra evitar comportamentos indefinidos ( lembrar de usar para o resto das funções com parâmetros imutáveis) 
+Perguntas* carregar_perguntas_csv(const char* arquivoPath, int* quantidade);
 
-/**
- * @brief exibe as perguntas.
- * 
- * @param p 
- */
-void exibir_pergunta(const Perguntas *p);
 
-/**
- * @brief verifica a resposta do usuario.
- * 
- * @param p 
- * @param resposta_usuario 
- * @return int 
- */
-int verificar_resposta(const Perguntas *p, char resposta_usuario);
+void salvar_perguntas_binario(const char* arquivoPath, Perguntas* perguntas, int quantidade);
+
+
+Perguntas* carregar_perguntas_binario(const char* arquivoPath, int* quantidade);
+
+
+void exportar_perguntas_csv(const char* arquivoPath, Perguntas* perguntas, int quantsidade);
+
+
+void listar_por_nivel(Perguntas* perguntas, int quantidade, Nivel nivel);
+
 
 #endif // QUIZ_H
