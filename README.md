@@ -1,17 +1,3 @@
 Documentação sobre o código na pasta DocsDoxygen. É atualizado pelo .bat conforme o andamento do projeto.
 
-/src
-  main.c
-  jogo.c
-  perguntas.c
-  arquivos.c
-  menu.c
-
-/include
-  jogo.h
-  perguntas.h
-  arquivos.h
-  menu.h
-
-perguntas.csv 
-Makefile , depois compilar pelo vs pra fazer um .exe
+Makefile , pra usar no ps no vscode : make , make run , make clean ( limpar exe e arquivos avulsos quando houver mudanca no cod)
