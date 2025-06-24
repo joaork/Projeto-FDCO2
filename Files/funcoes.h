@@ -13,6 +13,8 @@
  */
 #include "perguntas.h" //struct das perguntas ;
 
+
+ //essencial saber a manipulação do >quantidade> na main , vai ser usado praticamente como parametro geral dos arquivos
 Perguntas* carregar_perguntas_csv(const char* arquivoPath, int* quantidade);
 
 
@@ -22,7 +24,7 @@ void salvar_perguntas_binario(const char* arquivoPath, Perguntas* perguntas, int
 Perguntas* carregar_perguntas_binario(const char* arquivoPath, int* quantidade);
 
 
-void exportar_perguntas_csv(const char* arquivoPath, Perguntas* perguntas, int quantsidade);
+void exportar_perguntas_csv(const char* arquivoPathCsv, Perguntas* perguntas, int quantidade);
 
 
 void listar_por_nivel(Perguntas* perguntas, int quantidade, Nivel nivel);

@@ -26,7 +26,7 @@ typedef enum{
  */
 typedef struct{
     char enunciado[TAMANHO_ENUNCIADO];
-    char alt_a[TAMANHO_RESPOSTA], alt_b[TAMANHO_RESPOSTA], alt_c[TAMANHO_RESPOSTA], alt_d[TAMANHO_RESPOSTA], alt_e[TAMANHO_RESPOSTA];
+    char alternativas[5][TAMANHO_RESPOSTA];
     char correta;
     Nivel nivel;
 }Perguntas;
