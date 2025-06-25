@@ -70,7 +70,7 @@ void iniciar_partida(Perguntas* perguntas, int quantidade) {
     if (i == TOTAL_QUESTOES) {
         printf("\n Parabéns jogador!!!  Você ganhou R$ 1.000.000,00!\n");
     } else if (marco > 0) {
-        printf("\n Você errou .... mas garantiu o marco de segurança (%d perguntas).\n", marco);
+        printf("\n Você errou ... . mas garantiu o marco de segurança (%d perguntas).\n", marco);
     } else {
         printf("\n Que pena :cc , Você saiu sem nada. Boa sorte na próxima tentativa !\n");
     }

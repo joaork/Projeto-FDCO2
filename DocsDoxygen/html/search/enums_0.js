@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['nivel_0',['nivel',['../perguntas_8h.html#ad8d075e75a66998db6e55b5f0e5df88e',1,'perguntas.h']]]
+  ['nivel_0',['Nivel',['../perguntas_8h.html#a5feacdf7a1c3096495f124b0bef65aa4',1,'perguntas.h']]]
 ];

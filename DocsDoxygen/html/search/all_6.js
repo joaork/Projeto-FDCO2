@@ -1,10 +1,4 @@
 var searchData=
 [
-  ['main_0',['main',['../checkfile_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;checkfile.c'],['../game_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;game.c'],['../main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;main.c'],['../menu_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;menu.c']]],
-  ['main_2ec_1',['main.c',['../main_8c.html',1,'']]],
-  ['medio_2',['MEDIO',['../perguntas_8h.html#ad8d075e75a66998db6e55b5f0e5df88eaad23b2a79a27b74999d79dd568322ec6',1,'perguntas.h']]],
-  ['menu_2ec_3',['menu.c',['../menu_8c.html',1,'']]],
-  ['menu_2eh_4',['menu.h',['../menu_8h.html',1,'']]],
-  ['muito_5fdificil_5',['MUITO_DIFICIL',['../perguntas_8h.html#ad8d075e75a66998db6e55b5f0e5df88eae4ccc32dc5dea8daf6295038a37722de',1,'perguntas.h']]],
-  ['muito_5ffacil_6',['MUITO_FACIL',['../perguntas_8h.html#ad8d075e75a66998db6e55b5f0e5df88ea229c9f4371ec509c35c6817c51d79b76',1,'perguntas.h']]]
+  ['iniciar_5fpartida_0',['iniciar_partida',['../game_8c.html#a64303db6bcaacbeac3135b06e278924f',1,'iniciar_partida(Perguntas *perguntas, int quantidade):&#160;game.c'],['../game_8h.html#a64303db6bcaacbeac3135b06e278924f',1,'iniciar_partida(Perguntas *perguntas, int quantidade):&#160;game.c']]]
 ];

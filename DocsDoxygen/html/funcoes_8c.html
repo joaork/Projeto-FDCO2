@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Projeto-FDCO2: C:/Users/garot/Downloads/Projeto-FDCO2/Files/funcoes.h File Reference</title>
+<title>Projeto-FDCO2: C:/Users/garot/Downloads/Projeto-FDCO2/Files/funcoes.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -63,7 +63,7 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-$(function(){initNavTree('funcoes_8h.html','',''); });
+$(function(){initNavTree('funcoes_8c.html','',''); });
 </script>
 <div id="container">
 <div id="doc-content">
@@ -89,16 +89,19 @@ $(function(){initNavTree('funcoes_8h.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">funcoes.h File Reference</div></div>
+  <div class="headertitle"><div class="title">funcoes.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>Declarar as funcoes.  
-<a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="perguntas_8h_source.html">perguntas.h</a>&quot;</code><br />
-</div>
-<p><a href="funcoes_8h_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="funcoes_8h_source.html">funcoes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="perguntas_8h_source.html">perguntas.h</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a9e310b9f673a2ac6b8090780f3027fbf" id="r_a9e310b9f673a2ac6b8090780f3027fbf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9e310b9f673a2ac6b8090780f3027fbf">MAX_LINHA</a>&#160;&#160;&#160;500</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a162de925d27757d9631035593005c587" id="r_a162de925d27757d9631035593005c587"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_perguntas.html">Perguntas</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a162de925d27757d9631035593005c587">carregar_perguntas_csv</a> (const char *arquivoPath, int *quantidade)</td></tr>
@@ -107,12 +110,22 @@ Functions</h2></td></tr>
 <tr class="memitem:ac245ec377e4eb4d76b8b995e64e30375" id="r_ac245ec377e4eb4d76b8b995e64e30375"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac245ec377e4eb4d76b8b995e64e30375">exportar_perguntas_csv</a> (const char *arquivoPathCsv, <a class="el" href="struct_perguntas.html">Perguntas</a> *perguntas, int quantidade)</td></tr>
 <tr class="memitem:a3119283e46e796b9211a7539b82e9899" id="r_a3119283e46e796b9211a7539b82e9899"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3119283e46e796b9211a7539b82e9899">listar_por_nivel</a> (<a class="el" href="struct_perguntas.html">Perguntas</a> *perguntas, int quantidade, <a class="el" href="perguntas_8h.html#a5feacdf7a1c3096495f124b0bef65aa4">Nivel</a> nivel)</td></tr>
 </table>
-<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Declarar as funcoes. </p>
-<dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>2025-05-26</dd></dl>
-<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2025 </dd></dl>
-</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+<a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Macro Definition Documentation</h2>
+<a id="a9e310b9f673a2ac6b8090780f3027fbf" name="a9e310b9f673a2ac6b8090780f3027fbf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e310b9f673a2ac6b8090780f3027fbf">&#9670;&#160;</a></span>MAX_LINHA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX_LINHA&#160;&#160;&#160;500</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
 <a id="a1b1302930cbd8c38d0d87ea3f868597d" name="a1b1302930cbd8c38d0d87ea3f868597d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1b1302930cbd8c38d0d87ea3f868597d">&#9670;&#160;</a></span>carregar_perguntas_binario()</h2>
 
@@ -246,7 +259,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_8d93c22c2bc29a31b9caf9f001593817.html">Files</a></li><li class="navelem"><a href="funcoes_8h.html">funcoes.h</a></li>
+    <li class="navelem"><a href="dir_8d93c22c2bc29a31b9caf9f001593817.html">Files</a></li><li class="navelem"><a href="funcoes_8c.html">funcoes.c</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
   </ul>
 </div>

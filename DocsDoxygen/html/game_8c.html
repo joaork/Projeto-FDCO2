@@ -95,25 +95,71 @@ $(function(){initNavTree('game_8c.html','',''); });
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;time.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="perguntas_8h_source.html">perguntas.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="funcoes_8h_source.html">funcoes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="game_8h_source.html">game.h</a>&quot;</code><br />
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a2a2c63d82c87dd51a2356c4ea68abcab" id="r_a2a2c63d82c87dd51a2356c4ea68abcab"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2a2c63d82c87dd51a2356c4ea68abcab">TOTAL_QUESTOES</a>&#160;&#160;&#160;15</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4" id="r_ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
+<tr class="memitem:abe138cd5950f43ef45fd900cb6aab4df" id="r_abe138cd5950f43ef45fd900cb6aab4df"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abe138cd5950f43ef45fd900cb6aab4df">embaralhar</a> (<a class="el" href="struct_perguntas.html">Perguntas</a> *vetor, int n)</td></tr>
+<tr class="memitem:a64303db6bcaacbeac3135b06e278924f" id="r_a64303db6bcaacbeac3135b06e278924f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a64303db6bcaacbeac3135b06e278924f">iniciar_partida</a> (<a class="el" href="struct_perguntas.html">Perguntas</a> *perguntas, int quantidade)</td></tr>
 </table>
-<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
-<a id="ae66f6b31b5ad750f1fe042a706a4e3d4" name="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae66f6b31b5ad750f1fe042a706a4e3d4">&#9670;&#160;</a></span>main()</h2>
+<a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Macro Definition Documentation</h2>
+<a id="a2a2c63d82c87dd51a2356c4ea68abcab" name="a2a2c63d82c87dd51a2356c4ea68abcab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a2c63d82c87dd51a2356c4ea68abcab">&#9670;&#160;</a></span>TOTAL_QUESTOES</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int main </td>
+          <td class="memname">#define TOTAL_QUESTOES&#160;&#160;&#160;15</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+<a id="abe138cd5950f43ef45fd900cb6aab4df" name="abe138cd5950f43ef45fd900cb6aab4df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe138cd5950f43ef45fd900cb6aab4df">&#9670;&#160;</a></span>embaralhar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void embaralhar </td>
           <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="struct_perguntas.html">Perguntas</a> *</td>          <td class="paramname"><span class="paramname"><em>vetor</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>n</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a64303db6bcaacbeac3135b06e278924f" name="a64303db6bcaacbeac3135b06e278924f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64303db6bcaacbeac3135b06e278924f">&#9670;&#160;</a></span>iniciar_partida()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void iniciar_partida </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_perguntas.html">Perguntas</a> *</td>          <td class="paramname"><span class="paramname"><em>perguntas</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>quantidade</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">

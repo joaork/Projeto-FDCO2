@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['nivel_0',['nivel',['../struct_perguntas.html#afafcd32854d6f6b1c4cd3cca8f1315a7',1,'Perguntas::nivel'],['../perguntas_8h.html#ad8d075e75a66998db6e55b5f0e5df88e',1,'nivel:&#160;perguntas.h']]]
+  ['listar_5fpor_5fnivel_0',['listar_por_nivel',['../funcoes_8c.html#a3119283e46e796b9211a7539b82e9899',1,'listar_por_nivel(Perguntas *perguntas, int quantidade, Nivel nivel):&#160;funcoes.c'],['../funcoes_8h.html#a3119283e46e796b9211a7539b82e9899',1,'listar_por_nivel(Perguntas *perguntas, int quantidade, Nivel nivel):&#160;funcoes.c']]]
 ];
