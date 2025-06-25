@@ -1,6 +1,6 @@
 # Compilador e flags
 CC = gcc
-CFLAGS = -Wall -std=c99
+CFLAGS = -Wall -std=c99 -finput-charset=UTF-8 -fexec-charset=UTF-8 -fexec-charset=CP850
 
 # Fontes e destino
 SRC = main.c funcoes.c menu.c game.c

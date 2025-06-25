@@ -55,7 +55,6 @@ void salvar_perguntas_binario(const char* arquivoPath, Perguntas* perguntas, int
     fwrite(&quantidade,sizeof(int),1,f); //salvando o endereço de quant 
     fwrite(perguntas,sizeof(Perguntas),quantidade,f);  //salvando a struct vetor de perguntas
     fclose(f);
-    printf("Foi possivel salvar perguntas em binário , prosseguindo...\n\n"); //i <3 debugging with printf
 }
 
 
@@ -68,7 +67,6 @@ Perguntas* carregar_perguntas_binario(const char* arquivoPath, int* quantidade){
         Perguntas* perguntas = malloc(*quantidade * sizeof(Perguntas)); //criando vetor alocado da quantidade lida
         fread(perguntas,sizeof(Perguntas),*quantidade,f); //lendo para o vetor criado 
         fclose(f);
-        printf("Foi possivel carregar perguntas em binario, prosseguindo....\n"); //i <3 debugging with printf
         return perguntas;
 }
 

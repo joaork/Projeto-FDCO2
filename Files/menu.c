@@ -15,7 +15,7 @@ void menu(Perguntas* perguntas, int quantidade) {
         printf("2. Listar perguntas por nível\n");
         printf("3. Exportar perguntas para CSV\n"); // opcional
         printf("4. Sair\n");
-        printf("Escolha uma opção: ");
+        printf("Escolha uma opção:\n ");
         scanf("%d", &opcao);
 
         switch (opcao) {
