@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "raylib.h"
+#include "raygui.h"
 #include "perguntas.h"
 #include "funcoes.h"
 #include "menu.h"
@@ -10,6 +12,7 @@
 
 //cuidado com a codificacao utf-8 ao rodar  o codigo no terminal/exe , chcp 65001 no powershell pra evitar aqueles bugs maniacos de nao exibir acentos
 int main(){
+
     Perguntas* perguntas = NULL;
     int quantidade = 0; //parametro essencial pra leitura e manipulacao dos arq 
 

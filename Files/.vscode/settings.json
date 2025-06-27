@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "perguntas.h": "c",
+        "string.h": "c",
+        "raylib.h": "c"
+    }
+}
