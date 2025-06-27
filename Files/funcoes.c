@@ -3,6 +3,8 @@
 #include <stdlib.h>
 #include "funcoes.h"
 #include "perguntas.h"
+#include "raylib.h"
+#include "raygui.h"
 
 
 #define MAX_LINHA 500
@@ -71,40 +73,80 @@ Perguntas* carregar_perguntas_binario(const char* arquivoPath, int* quantidade){
 }
 
 
-void exportar_perguntas_csv(const char* arquivoPathCsv, Perguntas* perguntas, int quantidade){
- FILE* arquivo = fopen(arquivoPathCsv, "w");
+void exportar_perguntas_csv(const char* arquivoPathCsv, Perguntas* perguntas, int quantidade, char* mensagem, int tam_msg) {
+    FILE* arquivo = fopen(arquivoPathCsv, "w");
     if (!arquivo) {
-        perror("Erro ao abrir arquivo CSV para escrita");
+        snprintf(mensagem, tam_msg, "Erro ao abrir arquivo %s!", arquivoPathCsv);
         return;
     }
 
     for (int i = 0; i < quantidade; i++) {
-        fprintf(arquivo, "\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",%c,%d\n", //formatação do csv conforme o layout
-            perguntas[i].enunciado, //enunciado
+        fprintf(arquivo, "\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",%c,%d\n",
+            perguntas[i].enunciado,
             perguntas[i].alternativas[0],
             perguntas[i].alternativas[1],
             perguntas[i].alternativas[2],
             perguntas[i].alternativas[3],
-            perguntas[i].alternativas[4], //alternativas
-            perguntas[i].correta, //alter correta
-            perguntas[i].nivel //o lvl 
-        );
+            perguntas[i].alternativas[4],
+            perguntas[i].correta,
+            perguntas[i].nivel);
     }
 
     fclose(arquivo);
-    printf("Perguntas exportadas com sucesso para %s , prosseguindo....\n", arquivoPathCsv);
+    snprintf(mensagem, tam_msg, "Exportado para %s com sucesso!", arquivoPathCsv);
 }
 
+#include "raylib.h"
+#include "raygui.h"
+#include <string.h>
+#include <stdio.h>
 
-void listar_por_nivel(Perguntas* perguntas, int quantidade, Nivel nivel){
-  printf("Perguntas do nível %d:\n", nivel); //com base no parametro recebido na main do enum , vai listar ( aquele bgl de vEasy,med,hard,etc,etc)
+int listar_por_nivel(Perguntas* perguntas, int quantidade, int nivel) {
+    const int screenWidth = 1280;
+    const int screenHeight = 720;
+
+    Rectangle scrollPanel = { 50, 80, 1180, 500 };
+    Rectangle content = { 0, 0, 1160, 1000 };
+    Vector2 scroll = { 0, 0 };
+    Rectangle view = { 0 };
+
+    char buffer[8192] = "";
+    char linha[1024];
+
+    // Preenche buffer com perguntas do nível informado
     for (int i = 0; i < quantidade; i++) {
         if (perguntas[i].nivel == nivel) {
-            printf("Q%d: %s\n", i+1, perguntas[i].enunciado);
+            snprintf(linha, sizeof(linha), "Q%d: %s\n", i + 1, perguntas[i].enunciado);
+            strncat(buffer, linha, sizeof(buffer) - strlen(buffer) - 1);
             for (int j = 0; j < 5; j++) {
-                printf("  %c) %s\n", 'A'+j, perguntas[i].alternativas[j]);
+                snprintf(linha, sizeof(linha), "   %c) %s\n", 'A' + j, perguntas[i].alternativas[j]);
+                strncat(buffer, linha, sizeof(buffer) - strlen(buffer) - 1);
             }
-            printf("Resposta correta  : %c\n\n", perguntas[i].correta); //exib da correta
+            snprintf(linha, sizeof(linha), "   Resposta correta: %c\n\n", perguntas[i].correta);
+            strncat(buffer, linha, sizeof(buffer) - strlen(buffer) - 1);
         }
     }
+
+    Rectangle botaoVoltar = { screenWidth / 2 - 100, 600, 200, 50 };
+
+    while (!WindowShouldClose()) {
+        BeginDrawing();
+        ClearBackground(RAYWHITE);
+
+        DrawText(TextFormat("Perguntas do Nível %d", nivel), screenWidth / 2 - 170, 20, 30, DARKGREEN);
+
+        GuiScrollPanel(scrollPanel, NULL, content, &scroll, &view);
+        BeginScissorMode((int)view.x, (int)view.y, (int)view.width, (int)view.height);
+        DrawTextEx(GetFontDefault(), buffer, 
+                   (Vector2){scrollPanel.x + 10 - scroll.x, scrollPanel.y + 10 + scroll.y}, 20, 2, DARKGREEN);
+        EndScissorMode();
+
+        if (GuiButton(botaoVoltar, "Voltar")) {
+            return 1;  // retorna para o menu
+        }
+
+        EndDrawing();
+    }
+
+    return 1;
 }

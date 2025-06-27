@@ -24,10 +24,10 @@ void salvar_perguntas_binario(const char* arquivoPath, Perguntas* perguntas, int
 Perguntas* carregar_perguntas_binario(const char* arquivoPath, int* quantidade);
 
 
-void exportar_perguntas_csv(const char* arquivoPathCsv, Perguntas* perguntas, int quantidade);
+void exportar_perguntas_csv(const char* arquivoPathCsv, Perguntas* perguntas, int quantidade, char* mensagem, int tam_msg);
 
 
-void listar_por_nivel(Perguntas* perguntas, int quantidade, Nivel nivel);
+int listar_por_nivel(Perguntas* perguntas, int quantidade, int nivel);
 
 
 #endif // QUIZ_H

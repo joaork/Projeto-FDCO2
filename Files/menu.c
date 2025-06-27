@@ -15,6 +15,11 @@ int menu(Perguntas* perguntas, int quantidade) {
     const int screenHeight = 720;
     int nivel;
 
+    #define MSG_TAM 256
+    char mensagem[MSG_TAM] = "";
+    bool mostrarMensagem = false;
+    int timerMensagem = 0;
+
     InitWindow(screenWidth, screenHeight, "Jogo do Milhão - Músicas Brasileiras");
 
     // Inicia áudio
@@ -78,12 +83,37 @@ int menu(Perguntas* perguntas, int quantidade) {
                                     
                             break;
                         case 1:
-                            printf("Digite o nível (1 a 5): ");
-                            scanf("%d", &nivel);
-                            listar_por_nivel(perguntas, quantidade, nivel);
+                        // Tela para escolher o nível
+                        bool escolhendoNivel = true;
+                        nivel = 1; // valor padrão
+
+                        while (escolhendoNivel && !WindowShouldClose()) {
+                            BeginDrawing();
+                            ClearBackground(RAYWHITE);
+
+                            DrawText("Escolha um nível para listar as perguntas:", 300, 100, 24, DARKGREEN);
+
+                            // Botões de nível
+                            for (int n = 1; n <= 5; n++) {
+                                Rectangle botaoNivel = { 300 + (n - 1) * 120, 200, 100, 50 };
+                                char textoBotao[16];
+                                sprintf(textoBotao, "Nível %d", n);
+                                if (GuiButton(botaoNivel, textoBotao)) {
+                                    nivel = n;
+                                    escolhendoNivel = false;
+                                }
+                            }
+
+                            EndDrawing();
+                        }
+
+                        // Chama a tela Raylib com as perguntas do nível escolhido
+                        listar_por_nivel(perguntas, quantidade, nivel);
                             break;
                         case 2:
-                            exportar_perguntas_csv("perguntas_exportadas.csv", perguntas, quantidade);
+                            exportar_perguntas_csv("perguntas_exportadas.csv", perguntas, quantidade, mensagem, MSG_TAM);
+                                mostrarMensagem = true;
+                                timerMensagem = 180; // ~3 segundos a 60fps
                             break;
                         case 3:
                             StopMusicStream(musica);
@@ -93,6 +123,23 @@ int menu(Perguntas* perguntas, int quantidade) {
                             CloseWindow();
                             return 0;
                     }
+                }
+            }
+
+            if (mostrarMensagem) {
+                int caixaLargura = MeasureText(mensagem, 20) + 40;
+                int caixaAltura = 50;
+                int caixaX = (screenWidth - caixaLargura) / 2;
+                int caixaY = screenHeight - 100;
+
+                DrawRectangle(caixaX, caixaY, caixaLargura, caixaAltura, Fade(LIGHTGRAY, 0.85f));
+                DrawRectangleLines(caixaX, caixaY, caixaLargura, caixaAltura, DARKGRAY);
+                DrawText(mensagem, caixaX + 20, caixaY + 15, 20, DARKGREEN);
+
+                timerMensagem--;
+                if (timerMensagem <= 0) {
+                    mostrarMensagem = false;
+                    mensagem[0] = '\0';
                 }
             }
 
