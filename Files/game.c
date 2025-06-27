@@ -7,35 +7,48 @@
 
 #define TOTAL_QUESTOES 15
 
-// Função auxiliar para embaralhar vetor
-void embaralhar(Perguntas* vetor, int n) {
-    srand(time(NULL));
-    for (int i = 0; i < n - 1; i++) {
-        int j = i + rand() % (n - i);
-        Perguntas temp = vetor[i];
-        vetor[i] = vetor[j];
-        vetor[j] = temp;
+int selecionar_por_nivel(Perguntas* perguntas, int quantidade, int nivel, int* usados) {
+    int tentativas = 0;
+    while (tentativas < 1000) {
+        int i = rand() % quantidade;
+        if (!usados[i] && perguntas[i].nivel == nivel) {
+            usados[i] = 1;
+            return i;
+        }
+        tentativas++;
     }
+    return -1; 
 }
 
 void iniciar_partida(Perguntas* perguntas, int quantidade) {
     Perguntas selecionadas[TOTAL_QUESTOES];
-    int contador_nivel[6] = {0};  // níveis 1-5
-    int limite_nivel[6] = {0, 2, 2, 4, 4, 3}; // ignorar índice 0
-
-    int selecionadas_total = 0;
-
-    // Seleciona perguntas dos níveis corretos
-    for (int i = 0; i < quantidade && selecionadas_total < TOTAL_QUESTOES; i++) {
-        int n = perguntas[i].nivel;
-        if (n >= 1 && n <= 5 && contador_nivel[n] < limite_nivel[n]) {
-            selecionadas[selecionadas_total++] = perguntas[i];
-            contador_nivel[n]++;
-        }
+    int* usados = calloc(quantidade, sizeof(int));
+    if (!usados) {
+        printf("Erro de memória.\n");
+        return;
     }
 
-    // Embaralha perguntas
-    embaralhar(selecionadas, TOTAL_QUESTOES);
+    srand(time(NULL));
+
+    int ordem_niveis[TOTAL_QUESTOES] = {
+        1, 1,       
+              2, 2,       
+                     3, 3, 3, 3, 
+                                 4, 4, 4, 4, 
+                                            5,  5, 5     
+    };
+
+    for (int i = 0; i < TOTAL_QUESTOES; i++) {
+        int indice = selecionar_por_nivel(perguntas, quantidade, ordem_niveis[i], usados);
+        if (indice == -1) {
+            printf("Erro: não há perguntas suficientes no nível %d.\n", ordem_niveis[i]);
+            free(usados);
+            return;
+        }
+        selecionadas[i] = perguntas[indice];
+    }
+
+    free(usados);
 
     int marco = 0;
     int i;
@@ -66,7 +79,6 @@ void iniciar_partida(Perguntas* perguntas, int quantidade) {
         }
     }
 
-    // Resultado final
     if (i == TOTAL_QUESTOES) {
         printf("\n Parabéns jogador!!!  Você ganhou R$ 1.000.000,00!\n");
     } else if (marco > 0) {
